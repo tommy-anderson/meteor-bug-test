@@ -3,6 +3,7 @@ import { resetDatabase } from 'meteor/xolvio:cleaner';
 
 describe('test', () => {
     beforeEach(() => {
+      console.log(JSON.stringify(Meteor))
       resetDatabase();
     });
 
