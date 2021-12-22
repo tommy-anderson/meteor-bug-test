@@ -1,0 +1,35 @@
+name: Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  send-push-payload:
+    name: Send Push Payloads
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: sendPayload
+        uses: tommy-anderson/WebAppIO-GHAction@v1.2.4
+        with:
+          repoName: meteor-bug-test
+          apiKey: ${{ secrets.WEBAPPIO_API_KEY }}
+          apiExtra: push
+          buttons: false
+          branch: ${{ github.ref }}
+          ref: ${{ github.sha }}
+      - uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_MESSAGE: "Check it out"
+          SLACK_FOOTER: ""
+          SLACK_TITLE: "Could not send payload to WebApp"
+          SLACK_ICON: https://cdn.imgbin.com/17/8/10/imgbin-hand-tool-spanners-hammer-hammer-JgDQFbCh6e4fBzQnVADPBRRqn.jpg
+          SLACK_WEBHOOK: ${{ secrets.SLACK_DEVOPS }}
+          SLACK_USERNAME: planable-bot
+          SLACK_COLOR: "#CC0033"
+          MSG_MINIMAL: actions url
+        if: ${{ failure() }}
