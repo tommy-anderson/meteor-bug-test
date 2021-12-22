@@ -1,96 +1,21 @@
-## Examples of Meteor Projects
-
-### Ready
-
-#### Tic tac toe
-- Demo: [tic-tac-toe.meteorapp.com](https://tic-tac-toe.meteorapp.com)
-- Repository: [meteor/examples/tic-tac-toe](./tic-tac-toe)
-- Why: To show that we can even build multiplayer games with meteor.
-- Stack: Meteor and React
-- Last Updated At: Nov/18/2021
-- Meteor Version: 2.5
-
-#### Simple Tasks
-- Demo: [simpletasks.meteorapp.com/](https://simpletasks.meteorapp.com)
-- Repository: [fredmaiaarantes/simpletasks](https://github.com/fredmaiaarantes/simpletasks)
-- Why: To show how to use Meteor with [Chakra UI](https://chakra-ui.com/) + [Formik](https://formik.org/) + MongoDB
-- Stack: Meteor, Chakra UI, React, Formik, MongoDB
-- Last Updated At: Apr/07/2021
-- Meteor Version: 2.1.1
-
-#### Complex Svelte Todos
-- Demo: [complex-todos-svelte.meteorapp.com/](https://complex-todos-svelte.meteorapp.com)
-- Repository: [guncebektas/complex-todos-svelte](https://github.com/guncebektas/complex-todos-svelte)
-- Why: To show how to use Meteor in real world problems.
-- Stack: Meteor, Svelte, Bootstrap, MongoDB, Cypress
-- Last Updated At: Aug/21/2021
-
-#### Chakra UI
-- Demo: [chakraui.meteorapp.com/](https://chakraui.meteorapp.com/)
-- Repository: [meteor/examples/chakra-ui](./chakra-ui)
-- Why: To show how to set up [Chakra UI](https://chakra-ui.com/) + Icons + Dark Mode with Meteor
-- Stack: Chakra UI, Meteor and React
-- Last Updated At: Mar/06/2021
-- Meteor Version: 2.1
-
-#### Tailwindcss
-- Demo: [tailwindcss.meteorapp.com](https://tailwindcss.meteorapp.com)
-- Repository: [meteor/examples/tailwindcss](./tailwindcss)
-- Why: To show how to set up [tailwindcss](https://tailwindcss.com/) with Meteor
-- Stack: Tailwindcss, Meteor and React
-- Last Updated At: Mar/06/2021
-- Meteor Version: 2.1
-
-#### Wantch: Manage Movies to Watch
-- Demo: [wantch.meteorapp.com](https://wantch.meteorapp.com)
-- Repository: [filipenevola/wantch](https://github.com/filipenevola/wantch)
-- Why: To show how simple is to create an app using Meteor Methods and React
-- Stack: Meteor, React and PWA
-- Last Updated At: Feb/25/2021
-- Meteor Version: 2.1
+#Tic tac toe
+Simple multiplayer game with multi-room support.
 
 
-#### Double app
-- Demo: [double-app.meteorapp.com](https://double-app.meteorapp.com)
-- Repository: [denihs/double-app](https://github.com/denihs/double-app/)
-- Why: To show how to have two apps with different purposes, but sharing the same codebase. 
-- Stack: Meteor and React
-- Last Updated At: Mar/19/2021
-- Meteor Version: 2.1
+## Running the example
 
-### Leaderboards
-- Demo: N/A
-- Repository [meteor/leaderboards](https://github.com/meteor/leaderboard/)
-- Why: Complete example of a small Blaze app with only client code that can update the DB.
-- Stack: Meteor and Blaze
-- Last Updated At: Jul/25/2021
-- Meteor Version: 2.3.1
+### Install dependencies
 
-### WIP
-#### Parties
-- Demo: N/A
-- Repository: [meteor/examples/parties](./parties)
-- Why: One of the original Meteor examples showcasing how to build a nice working application with Blaze with very little code, while taking advantage of optimistic updates.
-- Stack: Meteor, Blaze
-- Last Updated At: August/23/2021
-- Meteor Version: 2.3.5
+```bash
+meteor npm install
+```
 
-#### Native app with Cordova
-- Demo: N/A
-- Repository: [meteor/examples/cordova](./cordova)
-- Why: To show how to set up a proper Native app with Meteor and Cordova
-- Stack: Meteor and Cordova
-- Last Updated At: May/22/2020
-- Meteor Version: 1.10.3
+### Running
 
-## How to add your example?
+```bash
+meteor
+```
 
-- Create a PR including it in this README
-- Make sure you are using the latest Meteor
-- Required fields: Repository, Why, Stack, Last Updated At and Meteor Version.
+## How to play it
 
-## Housekeeping
-
-We want to list only up-to-date examples here.
-
-If you see old examples that are no longer representing the current state of Meteor or that are not working please open a PR removing it from here.
+https://www.loom.com/share/6631f5dc1f8848e399616e75bf156b6c
