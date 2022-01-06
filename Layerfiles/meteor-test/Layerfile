@@ -6,3 +6,5 @@ RUN true
 CHECKPOINT
 RUN true
 CHECKPOINT disabled
+#Show contents after the app has run
+RUN ls /root/server/.meteor/local
