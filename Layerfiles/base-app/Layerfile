@@ -1,0 +1,10 @@
+FROM vm/ubuntu:18.04
+SKIP REMAINING IF API_EXTRA=~ ^$
+CACHE /root/server/.meteor/local/plugin-cache
+CACHE /root/server/.meteor/local/isopacks
+CACHE /root/server/.meteor/local/bundler-cache/scanner
+COPY / /root/app
+WORKDIR /root/app
+RUN bash ./install-meteor.bash
+ENV METEOR_ALLOW_SUPERUSER=true
+RUN meteor npm install

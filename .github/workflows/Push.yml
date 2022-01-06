@@ -21,14 +21,3 @@ jobs:
           buttons: false
           branch: ${{ github.ref }}
           ref: ${{ github.sha }}
-      - uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_MESSAGE: "Check it out"
-          SLACK_FOOTER: ""
-          SLACK_TITLE: "Could not send payload to WebApp"
-          SLACK_ICON: https://cdn.imgbin.com/17/8/10/imgbin-hand-tool-spanners-hammer-hammer-JgDQFbCh6e4fBzQnVADPBRRqn.jpg
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEVOPS }}
-          SLACK_USERNAME: planable-bot
-          SLACK_COLOR: "#CC0033"
-          MSG_MINIMAL: actions url
-        if: ${{ failure() }}

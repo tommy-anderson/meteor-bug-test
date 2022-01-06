@@ -1,0 +1,8 @@
+FROM /layerfiles/base-app
+#meteor is used only for preview links, so no need for it if no PRs
+RUN REPEATABLE pkill node; cp -r ./ /root/server/ && ls /root/server/.meteor && cd /root/server && nohup meteor npm run start-test& meteor npm run wait-on-test
+# RUN cd /root && mkdir cpu-profiling && bash ./app/layerfiles/scripts/cpu-profile.bash &true 
+RUN true
+CHECKPOINT
+RUN true
+CHECKPOINT disabled

@@ -1,8 +1,0 @@
-FROM vm/ubuntu:18.04
-SKIP REMAINING IF API_EXTRA=~ ^$
-COPY / /root/app
-WORKDIR /root/app
-RUN bash ./install-meteor.bash
-ENV METEOR_ALLOW_SUPERUSER=true
-RUN meteor npm install
-RUN meteor npm run test
