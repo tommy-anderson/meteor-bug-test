@@ -61,7 +61,7 @@ Meteor.methods({
     });
 
     if (!room) {
-      throw new Meteor.Error("invalid-play");
+      throw new Meteor.Error("invalid-play-something");
     }
     const winner = checkEndGame(room.gameState);
     if (winner && winner !== "empty") {
