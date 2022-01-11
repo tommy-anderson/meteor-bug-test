@@ -1,0 +1,20 @@
+FROM vm/ubuntu:18.04
+SKIP REMAINING IF API_EXTRA=~ ^$
+CACHE /root/server/.meteor/local/plugin-cache
+CACHE /root/server/.meteor/local/isopacks
+CACHE /root/server/.meteor/local/bundler-cache/scanner
+COPY / /root/app
+WORKDIR /root/app
+RUN sudo apt-get update
+RUN sudo apt-get install tree
+RUN bash ./install-meteor.bash
+ENV METEOR_ALLOW_SUPERUSER=true
+RUN meteor npm install
+#meteor is used only for preview links, so no need for it if no PRs
+RUN REPEATABLE pkill node; cp -r ./ /root/server/ && tree -L 2 /root/server/.meteor/local && cd /root/server && ls && meteor npm run start-dev
+RUN true
+CHECKPOINT
+RUN true
+CHECKPOINT disabled
+#Show contents after the app has run
+RUN tree /root/server/.meteor/local
