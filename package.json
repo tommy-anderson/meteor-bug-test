@@ -2,8 +2,8 @@
   "name": "tic-tac-toe",
   "private": true,
   "scripts": {
-    "wait-on-test": "wait-on http://localhost:4000 --httpTimeout 2400000",
-    "wait-on-dev": "wait-on http://localhost:3000 --httpTimeout 2400000",
+    "wait-on-test": "wait-on http://localhost:4000 --httpTimeout 180000",
+    "wait-on-dev": "wait-on http://localhost:3000 --httpTimeout 180000",
     "start-dev": "meteor run --port 3000",
     "start-test": "meteor run --port 4000",
     "test": "meteor test --once --driver-package meteortesting:mocha",

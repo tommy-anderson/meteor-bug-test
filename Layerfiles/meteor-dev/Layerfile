@@ -1,6 +1,6 @@
 FROM /Layerfiles/base-app
 #meteor is used only for preview links, so no need for it if no PRs
-RUN REPEATABLE pkill node; cp -r ./ /root/server/ && tree -L 2 /root/server/.meteor/local && cd /root/server && ls && meteor npm run start-dev
+RUN REPEATABLE pkill node; cp -r ./ /root/server/ && tree -L 2 /root/server/.meteor/local && cd /root/server && ls && nohup meteor npm run start-dev& meteor npm run wait-on-dev
 RUN true
 CHECKPOINT
 RUN true
