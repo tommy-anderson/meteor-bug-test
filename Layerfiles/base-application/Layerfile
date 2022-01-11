@@ -1,4 +1,5 @@
 FROM vm/ubuntu:18.04
+RUN echo hi
 SKIP REMAINING IF API_EXTRA=~ ^$
 CACHE /root/server/.meteor/local/plugin-cache
 CACHE /root/server/.meteor/local/isopacks
