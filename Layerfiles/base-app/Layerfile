@@ -1,6 +1,13 @@
 FROM vm/ubuntu:18.04
 SKIP REMAINING IF API_EXTRA=~ ^$
-CACHE /root/server/.meteor/local
+CACHE /root/server/.meteor/local/plugin-cache
+CACHE /root/server/.meteor/local/isopacks
+CACHE /root/server/.meteor/local/bundler-cache/scanner
+CACHE /root/server/.meteor/local/linker
+CACHE /root/server/.meteor/local/dev_bundle
+CACHE /root/server/.meteor/local/build
+CACHE /root/server/.meteor/local/server-cache
+CACHE /root/server/.meteor/local/shell
 COPY / /root/app
 WORKDIR /root/app
 RUN sudo apt-get update
