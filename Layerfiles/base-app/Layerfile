@@ -3,6 +3,8 @@ SKIP REMAINING IF API_EXTRA=~ ^$
 CACHE /root/server/.meteor/local
 COPY / /root/app
 WORKDIR /root/app
+RUN sudo apt-get update
+RUN sudo apt-get install tree
 RUN bash ./install-meteor.bash
 ENV METEOR_ALLOW_SUPERUSER=true
 RUN meteor npm install
