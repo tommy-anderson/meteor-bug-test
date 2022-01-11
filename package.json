@@ -13,7 +13,6 @@
   "dependencies": {
     "@babel/runtime": "^7.15.3",
     "chai": "^4.3.4",
-    "is-even": "^1.0.0",
     "is-odd": "^3.0.1",
     "meteor-node-stubs": "^1.1.0",
     "react": "^17.0.2",
