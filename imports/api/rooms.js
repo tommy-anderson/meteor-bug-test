@@ -22,6 +22,7 @@ function checkEndGame(gameState) {
 
 Meteor.methods({
   createRoom() {
+    console.log('room was created')
     const roomId = RoomCollection.insert({
       createdAt: new Date(),
       capacity: 2,
