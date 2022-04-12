@@ -1,5 +1,5 @@
 FROM /Layerfiles/base-application
-RUN touch /root/app/.meteor/local/resolver-result-cache.json
+RUN echo "{}" > /root/app/.meteor/local/resolver-result-cache.json
 CACHE /root/app/.meteor/local/resolver-result-cache.json
 CACHE /root/app/.meteor/local/plugin-cache
 CACHE /root/app/.meteor/local/isopacks
