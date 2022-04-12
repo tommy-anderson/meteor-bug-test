@@ -1,0 +1,5 @@
+FROM /Layerfiles/base-application
+WORKDIR /root/app
+CHECKPOINT disabled
+RUN tree -L 3 .meteor
+RUN time meteor npm run build
