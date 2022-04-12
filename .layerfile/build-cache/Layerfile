@@ -10,4 +10,6 @@ CHECKPOINT disabled
 RUN tree -L 3 .meteor
 RUN cat /root/app/.meteor/local/resolver-result-cache.json
 RUN NODE_OPTIONS=--max_old_space_size=1024 meteor npm run start-dev
-RUN time meteor npm run build
+ENV BUILD_DIR=/root/build1
+# IF RUN REPEATABLE IS THE ONLY CHECKPOINT IN THE RUN, IT DOESN'T REGISTER AS A CHECKPOINT
+RUN time meteor build --directory $BUILD_DIR
