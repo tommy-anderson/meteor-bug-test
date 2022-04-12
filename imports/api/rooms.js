@@ -16,6 +16,9 @@ function checkEndGame(gameState) {
     sameColor(2, 5, 8) ||
     sameColor(3, 6, 9) ||
     sameColor(1, 5, 9) ||
+    sameColor(1, 2, 4) ||
+    sameColor(1, 5, 4) ||
+    sameColor(1, 5, 4) ||
     sameColor(3, 5, 7)
   );
 }
@@ -23,6 +26,13 @@ function checkEndGame(gameState) {
 Meteor.methods({
   createRoom() {
     console.log('room was created')
+    const roomId = RoomCollection.insert({
+      createdAt: new Date(),
+      capacity: 2,
+      gameState: new Array(9).fill("empty"),
+      colorTurn: "cross",
+      winner: null
+    });
     const roomId = RoomCollection.insert({
       createdAt: new Date(),
       capacity: 2,
