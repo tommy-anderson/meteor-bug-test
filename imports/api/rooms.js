@@ -33,13 +33,14 @@ Meteor.methods({
       colorTurn: "cross",
       winner: null
     });
-    const roomId = RoomCollection.insert({
+    const roomId2 = RoomCollection.insert({
       createdAt: new Date(),
       capacity: 2,
       gameState: new Array(9).fill("empty"),
       colorTurn: "cross",
       winner: null
     });
+    RoomCollection.findOne(roomId2)
     return RoomCollection.findOne(roomId);
   },
   joinRoom({ roomId }) {
