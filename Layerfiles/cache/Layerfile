@@ -1,0 +1,7 @@
+FROM /Layerfiles/base-application
+CACHE /root/app/.meteor/local/plugin-cache
+CACHE /root/app/.meteor/local/isopacks
+CACHE /root/app/.meteor/local/bundler-cache/scanner
+CACHE /root/app/.meteor/local/bundler-cache/linker
+WORKDIR /root/app
+RUN time (NODE_OPTIONS=--max_old_space_size=1024 nohup meteor npm run start-dev & meteor npm run wait-on-dev)
