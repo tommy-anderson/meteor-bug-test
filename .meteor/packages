@@ -1,24 +1,129 @@
 # Meteor packages used by this project, one per line.
+
 # Check this file (and the other files in this directory) into your repository.
+
 #
+
 # 'meteor add' and 'meteor remove' will edit this file for you,
+
 # but you can also edit it by hand.
 
-meteor-base@1.5.1             # Packages every Meteor app needs to have
-mobile-experience@1.1.0       # Packages for a great mobile UX
-mongo@1.13.0                   # The database Meteor supports right now
-reactive-var@1.0.11            # Reactive variable for tracker
+meteor-base@1.5.1 # Packages every Meteor app needs to have
+mobile-experience@1.1.0 # Packages for a great mobile UX
+mongo@1.13.0 # The database Meteor supports right now
+reactive-var@1.0.11 # Reactive variable for tracker
 
-standard-minifier-css@1.7.4   # CSS minifier run for production mode
-standard-minifier-js@2.8.0    # JS minifier run for production mode
-es5-shim@4.8.0                # ECMAScript 5 compatibility for older browsers
-ecmascript@0.16.1              # Enable ECMAScript2015+ syntax in app code
-typescript@4.4.1              # Enable TypeScript syntax in .ts and .tsx modules
-shell-server@0.5.0            # Server-side component of the `meteor shell` command
-hot-module-replacement@0.5.0  # Update client in development without reloading the page
+es5-shim@4.8.0 # ECMAScript 5 compatibility for older browsers
+ecmascript@0.16.1 # Enable ECMAScript2015+ syntax in app code
+typescript@4.4.1 # Enable TypeScript syntax in .ts and .tsx modules
+shell-server@0.5.0 # Server-side component of the `meteor shell` command
+hot-module-replacement@0.5.0 # Update client in development without reloading the page
 
-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
-static-html@1.3.2             # Define static page content in .html files
-react-meteor-data       # React higher-order component for reactively tracking Meteor data
+insecure@1.0.7 # Allow all DB writes from clients (for prototyping)
+static-html@1.3.2 # Define static page content in .html files
+react-meteor-data # React higher-order component for reactively tracking Meteor data
 fongandrew:find-and-modify
 xolvio:cleaner
+
+# Meteor packages used by this project, one per line.
+
+#
+
+# 'meteor add' and 'meteor remove' will edit this file for you,
+
+# but you can also edit it by hand.
+
+# Meteor core packages
+
+logging@1.3.1
+reload@1.3.1
+check@1.3.1
+service-configuration@1.3.0
+promise@0.12.0
+random@1.2.0
+babel-compiler@7.8.0
+tracker@1.2.0
+
+# Security packages
+
+audit-argument-checks@1.0.7
+#east5th:package-scan
+
+# Remove from project
+
+underscore@1.0.10
+ultimatejs:tracker-react
+
+# Not yet used
+
+# dynamic-import@0.3.0
+
+# Accounts packages
+
+accounts-base@2.2.1
+accounts-facebook@1.3.3
+accounts-twitter@1.5.0
+accounts-password@2.2.0
+oauth@2.1.1
+twitter-oauth@1.3.0
+#brettle:accounts-add-service
+
+# Core packages used
+
+fourseven:scss
+edgee:slingshot
+matb33:collection-hooks
+mizzao:timesync
+reywood:publish-composite
+aldeed:collection2-core
+aldeed:schema-index
+vsivsi:job-collection@=1.4.0 # Do not upgrade
+meteorhacks:picker
+percolate:migrations
+
+# Packages for methods
+
+tunifight:loggedin-mixin
+ddp-rate-limiter@1.1.0
+mdg:validated-method
+
+# Helper packages
+
+nickgudumac:cdn
+ccorcos:subs-cache
+
+# Tools for debugging and monitoring
+
+#alon:lag-console
+#fermuch:stats.js
+#lai:ddp-inspector
+mdg:meteor-apm-agent
+
+# testing
+
+#This is a fork from xolvio/cleaner where we've added an argument check for the method call
+#The reason why we've done this is so we could continue using audit-argument-checks@1.0.7
+#Check the issue for more info https://github.com/xolvio/cleaner/issues/16
+#dispatch:mocha-phantomjs
+#practicalmeteor:sinon
+#practicalmeteor:mocha
+hwillson:stub-collections
+johanbrook:publication-collector
+dburles:factory
+xolvio:backdoor
+meteortesting:mocha
+
+# Analytics
+
+juliancwirko:postcss
+froatsnook:valid-email #Search NPM alternative
+dynamic-import@0.7.2
+accounts-google@1.4.0
+#msavin:usercache
+#qualia:profile
+#ostrio:meteor-root
+less@3.0.0
+zodern:standard-minifier-js
+zodern:hide-production-sourcemaps
+#hot-module-replacement
+tunguska:reactive-aggregate@1.3.4
