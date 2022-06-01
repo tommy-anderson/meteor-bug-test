@@ -1,8 +1,8 @@
 FROM vm/ubuntu:18.04
 CHECKPOINT disabled
-RUN echo GIT_COMMIT_TITLE
+RUN echo $GIT_COMMIT_TITLE
 RUN echo hi
 SKIP REMAINING IF API_EXTRA=~ ^$
-SKIP REMAINING IF GIT_COMMIT_TITLE=~ "\[skip tests\]"
+SKIP REMAINING IF GIT_COMMIT_TITLE=~ '\[skip tests\]'
 RUN echo here
 RUN echo here
