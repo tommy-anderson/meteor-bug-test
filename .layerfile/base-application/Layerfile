@@ -5,4 +5,3 @@ RUN echo hi
 SKIP REMAINING IF API_EXTRA=~ ^$
 SKIP REMAINING IF GIT_COMMIT_TITLE=~"[skip-deploy]|[stop-deploy]"
 RUN echo here
-RUN echo here
