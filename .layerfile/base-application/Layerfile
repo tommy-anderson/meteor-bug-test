@@ -3,5 +3,6 @@ CHECKPOINT disabled
 RUN echo $GIT_COMMIT_TITLE
 RUN echo hi
 SKIP REMAINING IF API_EXTRA=~ ^$
+#skip
 SKIP REMAINING IF GIT_COMMIT_TITLE =~ "\[skip tests\]"
 RUN echo running tests
