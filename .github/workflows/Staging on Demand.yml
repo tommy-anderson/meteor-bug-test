@@ -1,0 +1,35 @@
+name: Staging on Demand
+
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  send-pr-comment:
+    runs-on: ubuntu-latest
+    name: Send PR Comment
+    steps:
+      - name: Debug Contexts
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      
+    
+  # send-push-payload:
+  #   name: Staging on Demand
+  #   timeout-minutes: 5
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name:
+  #     # - name: sendPayload
+  #     #   uses: tommy-anderson/WebAppIO-GHAction@v1.2.4
+  #     #   with:
+  #     #     repoName: meteor-bug-test
+  #     #     apiKey: ${{ secrets.WEBAPPIO_API_KEY }}
+  #     #     apiExtra: push
+  #     #     buttons: false
+  #     #     branch: ${{ github.ref }}
+  #     #     ref: ${{ github.sha }}
