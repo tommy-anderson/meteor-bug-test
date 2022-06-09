@@ -11,7 +11,7 @@ jobs:
     name: Send PR Comment
     steps:
       - name: Debug Contexts
-        if: ${{ github.event.comment.body == "/stage }}
+        if: ${{ github.event.comment.body === "/stage" }}
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
