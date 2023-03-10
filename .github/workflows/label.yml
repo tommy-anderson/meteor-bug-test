@@ -1,0 +1,19 @@
+name: Add E2E:skip
+
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  add_label:
+    name: Add PR Label
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        # Petru wants to skip E2E tests on his PRs
+        if: ${{ github.actor == "tommy-anderson" }}
+        with:
+          labels: E2E:skip
+          github_token: ${{secrets.GH_TOKEN}}
