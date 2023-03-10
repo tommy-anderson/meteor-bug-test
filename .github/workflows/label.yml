@@ -8,12 +8,16 @@ jobs:
     name: Add PR Label
     timeout-minutes: 5
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1
-        # the user'tommy-anderson' wants to skip E2E tests on his PRs
-        if: github.actor == 'tommy-anderson'
+      - uses: actions/github-script@v6
+        if: github.author == 'tommy-anderson'
         with:
-          labels: E2E:skip
-          github_token: ${{secrets.GH_TOKEN}}
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["E2E:skip"]
+            })
