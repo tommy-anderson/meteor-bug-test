@@ -7,3 +7,5 @@ Meteor.publish("rooms", function() {
 Meteor.publish("room", function({ _id }) {
   return RoomCollection.find({ _id });
 });
+
+// hi
