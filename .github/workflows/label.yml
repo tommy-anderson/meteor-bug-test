@@ -2,22 +2,14 @@ name: Add E2E:skip
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened]
 jobs:
   add_label:
-    name: Add PR Label
-    timeout-minutes: 5
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
         if: github.actor == 'tommy-anderson'
         with:
-          script: |
-            github.rest.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ["E2E:skip"]
-            })
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: E2E:skip
