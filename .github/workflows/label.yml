@@ -12,8 +12,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions-ecosystem/action-add-labels@v1
-        # Petru wants to skip E2E tests on his PRs
-        if: ${{ github.actor == "tommy-anderson" }}
+        # the user'tommy-anderson' wants to skip E2E tests on his PRs
+        if: github.actor == 'tommy-anderson'
         with:
           labels: E2E:skip
           github_token: ${{secrets.GH_TOKEN}}
