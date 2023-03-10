@@ -1,7 +1,0 @@
-FROM vm/ubuntu:18.04
-CHECKPOINT disabled
-RUN echo $GIT_COMMIT_TITLE
-RUN echo hi
-#skipss
-SKIP REMAINING IF GIT_COMMIT_TITLE =~ "\[skip tests\]|✅|🛠|📓"
-RUN echo running testsss
