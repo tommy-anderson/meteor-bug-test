@@ -2,7 +2,7 @@ name: Add E2E:skip
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize, reopened]
 jobs:
   add_label:
     runs-on: ubuntu-latest
