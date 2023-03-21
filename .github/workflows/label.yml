@@ -1,11 +1,11 @@
 name: Preview Check
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [labeled]
 jobs:
   preview-check:
     runs-on: ubuntu-latest
     steps:
       - name: Check if preview label exists
-        if: contains(join(jsonpath(${{ github.event.pull_request.labels }}, '$[*].name'), '||'), 'preview')
-        run: echo "The 'preview' label exists on this pull request. Run the action."
+        if: github.event.label.name == 'preview'
+        run: PR was labeled with preview
