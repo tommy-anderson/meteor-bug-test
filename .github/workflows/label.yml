@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Check if preview label exists
         if: github.event.label.name == 'preview'
-        run: PR was labeled with preview
+        run: echo PR was labeled with preview
