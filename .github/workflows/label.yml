@@ -1,15 +1,11 @@
-name: Add E2E:skip
-
+name: Preview Check
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened, synchronize]
 jobs:
-  add_label:
+  preview-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1
-        if: github.actor == 'tommy-anderson'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: E2E:skip
+      - name: Check if preview label exists
+        if: contains(join(jsonpath(${{ github.event.pull_request.labels }}, '$[*].name'), '||'), 'preview')
+        run: echo "The 'preview' label exists on this pull request. Run the action."
