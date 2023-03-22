@@ -8,4 +8,9 @@ Meteor.publish("room", function({ _id }) {
   return RoomCollection.find({ _id });
 });
 
-console.log('myBranch/test')
+console.log('close')
+console.log('close')
+console.log('close')
+console.log('close')
+console.log('close')
+console.log('close')
