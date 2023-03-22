@@ -9,9 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.comment.body, '/preview')
     steps:
+      - uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
       - uses: actions/checkout@v3
+        if: success()
         with:
-          ref: refs/pull/${{ github.event.issue.number }}/head
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+      - run: git rev-parse --abbrev-ref HEAD
+      - run: git rev-parse --verify HEAD
       - name: Echo ref
         run: echo $GITHUB_REF
       - name: Trigger
