@@ -47,3 +47,9 @@ workflows:
         - equal: [<< pipeline.parameters.GHA_Meta >>, 'preview']
     jobs:
       - say-hello
+  close-workflow:
+    when:
+      and:
+        - equal: [<< pipeline.parameters.GHA_Meta >>, 'close']
+    jobs:
+      - say-hello
