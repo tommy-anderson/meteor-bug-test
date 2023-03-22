@@ -11,6 +11,8 @@ jobs:
   trigger-circleci:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Trigger
         uses: tommy-anderson/trigger-circleci-pipeline-action@v2.1
         with:
