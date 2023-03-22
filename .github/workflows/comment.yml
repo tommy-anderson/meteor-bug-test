@@ -20,9 +20,10 @@ jobs:
       - name: Echo ref
         run: echo $GITHUB_REF
       - name: Trigger
-        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.6
+        uses: tommy-anderson/trigger-circleci-pipeline-action@v2
         with:
           GHA_Meta: 'preview'
+          GHA_Branch: ${{ steps.comment-branch.outputs.head_ref }}
         env:
           CCI_TOKEN: 04174f2c87bf4f652e60a485bc62022d2a37c6a6
     
