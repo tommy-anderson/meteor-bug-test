@@ -15,7 +15,7 @@ jobs:
       - name: Trigger
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.5
         with:
-          GHA_Meta: 'close'
+          GHA_Meta: 'preview'
         env:
           CCI_TOKEN: 04174f2c87bf4f652e60a485bc62022d2a37c6a6
     
