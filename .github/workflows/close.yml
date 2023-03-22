@@ -5,11 +5,16 @@ on:
     types:
       - closed
     branches:
-      - master
+      - main
 
 jobs:
   trigger-circleci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Trigger
+        uses: tommy-anderson/trigger-circleci-pipeline-action@v2.1
+        with:
+          GHA_Meta: 'preview'
+          # GHA_Branch: ${{ steps.comment-branch.outputs.head_ref }}
+        env:
+          CCI_TOKEN: 2b2757de5e2b78fb99da7a072f8db0bdd4b5ca2d
