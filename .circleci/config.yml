@@ -49,7 +49,8 @@ workflows:
       - say-hello
   close-workflow:
     when:
-      and:
-        - equal: [<< pipeline.parameters.GHA_Meta >>, 'close']
+        matches:
+          pattern: "close___.+"
+          value: << pipeline.parameters.GHA_Meta >>
     jobs:
       - say-hello
