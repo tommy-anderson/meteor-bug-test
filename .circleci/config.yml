@@ -34,17 +34,15 @@ jobs:
     steps:
       - checkout
       - run: echo $GHA_Meta
-      - run:
-          name: "print server file"
-          command: cat server/main.js
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  preview-workflow:
     when:
-      and:
-        - equal: [<< pipeline.parameters.GHA_Meta >>, 'preview']
+      matches:
+        pattern: "preview___.+"
+        value: << pipeline.parameters.GHA_Meta >>
     jobs:
       - say-hello
   close-workflow:
