@@ -12,7 +12,7 @@ parameters:
   GHA_Action:
     type: string
     # from docs
-    default: '__CircleCI-Public_trigger-circleci-pipeline-action'
+    default: ''
   GHA_Meta:
     type: string
     default: ''
