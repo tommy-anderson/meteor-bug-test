@@ -21,7 +21,7 @@ jobs:
           GHA_Meta: 'preview___${{ github.actor }}'
           GHA_Branch: ${{ steps.comment-branch.outputs.head_ref }}
         env:
-          CCI_TOKEN: 04174f2c87bf4f652e60a485bc62022d2a37c6a6
+          CCI_TOKEN: 2296f7e841e869bbf57781ca0af4c36b55b4f913
     
     
     
